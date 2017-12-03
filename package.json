@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-data": "^1.2.1",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "npm-run-all": "^4.0.2"
+  },
+  "scripts": {
+    "watch": "rm -rf dist && gulp watch",
+    "serve": "node ./server.js",
+    "develop": "run-p watch serve",
+    "build": "rm -rf dist && gulp",
+    "postinstall": "gulp"
+  }
+}
