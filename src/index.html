@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body style="margin:0;">
-    <div data-ix="logo-display-none" class="left-fixed-nav-logo" style="opacity: 1;">
+    <div data-ix="logo-display-none" data-spirit-id="logo" class="left-fixed-nav-logo">
       <a href="/" class="logo-link-block w-inline-block w--current"><img src="https://daks2k3a4ib2z.cloudfront.net/59de25bbc164e30001779fe8/59e07d3fa80ea00001edb7f2_Logo_.gif" width="30" class="logo"></a>
     </div>
     <div data-ix="project-load-animation-nav" class="left-fixed-nav-bottom">
@@ -43,7 +43,7 @@
     <!-- COMPONENT START -->
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       initProductFinder(document.querySelector('.product-finder-container'));
 
       function initProductFinder(pf) {
@@ -227,6 +227,28 @@
            closeOverlay();
         }
       });
+
+    </script> -->
+    <!--include the runtime-->
+    <script src="https://unpkg.com/spiritjs/dist/spirit.js"></script>
+
+    <!--script to play the created animation-->
+    <script>
+    const animation = 'groups.json'
+    spirit.setup()
+    .then(() => spirit.load(animation))
+    .then(groups => {
+      groups.get('logo').construct()
+      //loop it
+        // play gsap timeline
+        // .yoyo(true)
+        // .repeat(-1)
+        // .resume()
+
+      //or play once
+        //.play()
+
+    })
 
     </script>
     <!-- COMPONENT END -->
