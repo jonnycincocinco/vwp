@@ -15,6 +15,9 @@
 
 $base--pink: #ff03af;
 
+html {box-sizing:border-box;font-weight:normal;}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0;font-weight:inherit;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing: grayscale;}
+
 body {
   font-family: "Averta",Helvetica,Arial,sans-serif;
   font-size: 100%;
@@ -25,6 +28,14 @@ body {
 }
 
 //
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
 
 .left-fixed-nav-top {
   position: fixed;
@@ -52,6 +63,43 @@ body {
   background-color: transparent;
 }
 
+.nav-link-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 90px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  &:first-child {
+    margin-top: 150px;
+  }
+  a {
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+    &:hover {
+      background: white;
+      color: $base--pink;
+    }
+
+  }
+}
+
 .left-fixed {
   position: fixed;
   left: 0px;
@@ -71,12 +119,12 @@ body {
   left: 0px;
   top: 0px;
   bottom: 0px;
-  z-index: 100;
+  z-index: 200;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 80px;
+  height: 123px;
   margin-left: -0.5vw;
   width: 10vw;
 
@@ -123,12 +171,44 @@ body {
   background-color: transparent;
 }
 
+.social-media-link-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: transparent;
+  -webkit-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+
+}
+
+a {
+  color: $base--pink;
+    &:hover {
+      background: $base--pink;
+      color: #fff;
+  }
+}
+
+
 .project-heading-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 90vw;
+  width: 88vw;
   padding-bottom: 30px;
   margin-top: 40px;
   margin-right: -11px;
@@ -150,7 +230,7 @@ body {
 
 .page-container {
   position: relative;
-  z-index: 110;
+  z-index: 10;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -172,10 +252,10 @@ body {
 }
 
 
-h1 {
+h1, h2 {
   font-size: 6.14em;
     line-height: 1em;
-    span {
+    .title {
       color: $base--pink;
       text-shadow: 3px 1px 0px rgba(255, 255, 255, 1);
       font-weight: 200;
@@ -187,6 +267,26 @@ h1 {
       text-shadow: 3px 1px 0px rgba(255, 255, 255, 1);
     }
 }
+
+h4 {
+  font-size: 3.14em;
+  line-height: 1em;
+  font-weight: 900;
+}
+
+.header {
+  margin-bottom: calc(4vw + 40px);
+  &.header-inner {
+    margin-bottom: 40px;
+  }
+}
+
+.half-img {
+  width: 40%;
+  text-align: left;
+  margin-top: 50px;
+}
+
 .product-finder-container {
   font-family: "Averta", Arial, sans-serif;
   font-weight: normal;
